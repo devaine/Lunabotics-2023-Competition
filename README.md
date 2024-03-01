@@ -1,8 +1,8 @@
-# Development Branch for Lunabotics
+# Development Branch for Lunabotics on Windows
 
 ## Basic Diagram for interactions between hardware components
 ![Diagram](./images/Diagram.png)
 
-## Programs/Files Used
-- [WPILib](https://github.com/wpilibsuite/allwpilib/releases)
-    - [Documentaiton in C++](https://github.wpilib.org/allwpilib/docs/release/cpp/)
+## Tutorials Used
+- [ROS2 Humble Windows Binary Install](https://docs.ros.org/en/humble/Installation/Windows-Install-Binary.html)
+- [Wiki for ROS2 Tutorials on Humble](https://docs.ros.org/en/humble/Tutorials.html)
