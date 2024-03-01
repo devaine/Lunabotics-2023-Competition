@@ -18,3 +18,11 @@ If you want to use <code>./powershellSetup.ps1</code>, you can use this command:
 It's only temporary to the Powershell process you're using though. [For more information](https:\go.microsoft.com\fwlink\?LinkID=135170)
 
 [Source Your ROS2 Setup Script](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html#add-sourcing-to-your-shell-startup-script) is the source for <code>./powershellSetup.ps1</code>
+
+[What are nodes?](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Nodes/Understanding-ROS2-Nodes.html)
+
+[Building Packages with Colcon](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Colcon-Tutorial.html)
+
+[Creating Packages](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Colcon-Tutorial.html)
+
+[Example for creating nodes](https://github.com/ros2/demos/tree/humble/demo_nodes_cpp)

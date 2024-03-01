@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<package format="3">
+<!--
+    Source: https://www.ros.org/reps/rep-0149.html
+    <name>, <version>, <maintainer>, and <license> are required.
+    For examples: https://github.com/ros2/demos/blob/humble/demo_nodes_cpp/package.xml
+-->
+<name>ros2-windows</name>
+<version>1.0.0</version>
+<maintainer email="ros-orphaned-packages@googlegroups.com">Unmaintained see http://wiki.ros.org/MaintenanceGuide#Claiming_Maintainership</maintainer>
+<license>GPLv2</license>
+<author>devaine</author>

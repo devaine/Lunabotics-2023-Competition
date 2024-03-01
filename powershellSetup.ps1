@@ -1,1 +1,0 @@
-"C:\Users\Laptop\Documents\Programming Libraries\ROS2\ros2-windows\local_setup.ps1"
