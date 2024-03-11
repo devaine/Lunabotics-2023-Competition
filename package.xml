@@ -1,12 +1,15 @@
 <?xml version="1.0"?>
-<package format="3">
+<?xml-model href="http://download.ros.org/schema/package_format2.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="2">
 <!--
-    Source: https://www.ros.org/reps/rep-0149.html
+    Source: https://www.ros.org/reps/rep-0140.html
     <name>, <version>, <maintainer>, and <license> are required.
     For examples: https://github.com/ros2/demos/blob/humble/demo_nodes_cpp/package.xml
 -->
 <name>ros2-windows</name>
-<version>1.0.0</version>
-<maintainer email="ros-orphaned-packages@googlegroups.com">Unmaintained see http://wiki.ros.org/MaintenanceGuide#Claiming_Maintainership</maintainer>
+<version>0.0.1</version>
+<description>testing how xml and everything works</description>
+<maintainer email="ros-orphaned-packages@googlegroups.com">Unmaintained, see http://wiki.ros.org/MaintenanceGuide#Claiming_Maintainership</maintainer>
 <license>GPLv2</license>
 <author>devaine</author>
+<!-- The recomended build type is "ament_cmake" and "ament_python". pure cmake packages are also supported --> 
