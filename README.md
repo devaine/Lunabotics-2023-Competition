@@ -46,7 +46,7 @@ It's only temporary to the Powershell process you're using though. [For more inf
 ### Here's what makes a package
 - <code>CMakeLists.txt</code> describes how to build the code.
 - <code>include/<i>package_name/</i></code> contains the headers for the package.
-- <code>package.xml<code> contains information about the package.
+- <code>package.xml</code> contains information about the package.
 - <code>src/</code> contains the source code.
 
 ### Workspaces
