@@ -3,10 +3,21 @@
 ## Basic Diagram for interactions between hardware components
 ![Diagram](./images/Diagram.png)
 
-## Tutorials Used
+## Tutorials/References Used
 - [ROS2 Humble Windows Binary Install](https://docs.ros.org/en/humble/Installation/Windows-Install-Binary.html)
 - [Wiki for ROS2 Tutorials on Humble](https://docs.ros.org/en/humble/Tutorials.html)
+- [What are nodes?](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Nodes/Understanding-ROS2-Nodes.html)
+- [Building Packages with Colcon](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Colcon-Tutorial.html)
+- [Create your own package](https://www.ros.org/reps/rep-0140.html)
+- [Creating Packages](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Colcon-Tutorial.html)
+- [Example for creating nodes](https://github.com/ros2/demos/tree/humble/demo_nodes_cpp)
+- [The ROS_DOMAIN_ID](https://docs.ros.org/en/humble/Concepts/Intermediate/About-Domain-ID.html)
+    - [Domain ID to UDP Port Calculator](https://docs.ros.org/en/humble/Concepts/Intermediate/About-Domain-ID.html#domain-id-to-udp-port-calculator)
 
+
+## Packages Used (or Using)
+[comment]: - [RPLidar](https://wiki.ros.org/rplidar)
+[comment]:     - [Wiki](https://github.com/robopeak/rplidar_ros/wiki)
 
 ---
 # Notes:
@@ -18,12 +29,8 @@ It's only temporary to the Powershell process you're using though. [For more inf
 
 [Source Your ROS2 Setup Script](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html#add-sourcing-to-your-shell-startup-script) is the source for <code>./ros2Setup.bat</code>
 
-[What are nodes?](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Nodes/Understanding-ROS2-Nodes.html)
-
-[Building Packages with Colcon](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Colcon-Tutorial.html)
-## Notes
-- src subdirectory = source code for ROS2 packages
-    - colcon will create directories => <code>build</code>,<code>install</code>, and <code>log</code>.
+<code>src/</code> subdirectory = source code for ROS2 packages
+    - colcon will create directories => <code>build/</code>,<code>install/</code>, and <code>log/</code>.
 - To build ROS2 code you can use ```colcon``` by using a VS2019 envionment by searching up in your start...
 <pre>x64 Native Tools Command Prompt for VS 2019</pre>
 
@@ -32,13 +39,8 @@ It's only temporary to the Powershell process you're using though. [For more inf
 - [use this for setuptools if there's an error for "setup.py"](https://answers.ros.org/question/396439/setuptoolsdeprecationwarning-setuppy-install-is-deprecated-use-build-and-pip-and-other-standards-based-tools/)
     - [and this too](https://www.reddit.com/r/ROS/comments/wxkfes/colcon_build_failed_in_example_failed_examples/)
 - From what's shown, it seems that <code>package.xml</code> is meant to be within a package directory under <code>./src</code>
-
-[Create your own package](https://www.ros.org/reps/rep-0140.html)
-
-
-[Creating Packages](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Colcon-Tutorial.html)
----
-## Notes
+- **One thing to always practice**: When starting a new terminal instance or when you're building/executing code, make sure your ROS2 is *sourced* behf
+### What is a package?
 - A package is a organizational unit for ROS 2 code. It helps with installing and sharing code.
 - Uses <code>ament</code> as it's build system and <code>colcon</code> as it's build tool.
 - Creating a package only works with colcon and Python
@@ -57,8 +59,35 @@ It's only temporary to the Powershell process you're using though. [For more inf
 
 - <b>Remember!</b> if you want to build multiple packages at once, you can use <code>colcon build</code> in the workspace root directory. (not <code>./src</code> but rather the directory above it.)
     - You can also use <code>colcon build</code> for building invdividual packages, just makes sure you're in the package's directory.
-    - If you wish to <i>select</i> a package to build from colcon, you can use:
+    - If you wish to <i>select</i> a package to build from colcon, you can use (in the root directory):
     <pre>colcon build --packages-select <i>package</i></pre>
-    In the root directory
 
-[Example for creating nodes](https://github.com/ros2/demos/tree/humble/demo_nodes_cpp)
+### Steps in order to create a new package + workspace
+1. Create your workspace (create a new folder)
+2. Source your ROS 2 install setup <code>./ros2Setup.bat</code>
+3. Create your package 
+    - You may use the command (creates a package + nodes inside the package)
+    <pre>ros2 pkg create --build-type ament_cmake --license Apache-2.0 --node-name my_node my_package</pre>
+
+    **OR**
+
+    - You can create your own directory with:
+        - ```package.xml``` - You may use ```./xmltemplate.txt```
+        - ```CMakeLists.txt``` (if you know how to use CMake you can modify it to your liking.)
+        - a ```LICENSE``` of your choice (sprcify in ```package.xml``` too)
+        - ```src/``` directory for your node source code.
+    - Program code for the node in ```src/``` and build it
+4. Execute your code by executing in the root directory of your workspace:
+<pre>colcon build</pre>
+
+5. You can run the program by specifying the node and the package by using:
+<pre>ros2 run <i>my_package</i> <i>my_node</i> </pre>
+
+### Nodes
+- Are executables that communicate over ROS graph, they pass information (in the form of string messages over a **topic**)
+ 
+### More info about nodes
+- Use ```ROS_DOMAIN_ID``` environment variable to 'gorup up' nodes in order to differentiate which nodes are meant to do something than other nodes doing something else.
+    - The default domain value for all nodes in ROS 2 is ```0```, however you could change that by firstly declaring what domain value ```ROS_DOMAIN_ID``` should be by typing:
+    <pre> set ROS_DOMAIN_ID = <i>value</i>
+        - [Although I do suggest that you should limit your value from ```0-101```](https://docs.ros.org/en/humble/Concepts/Intermediate/About-Domain-ID.html#platform-specific-constraints)
