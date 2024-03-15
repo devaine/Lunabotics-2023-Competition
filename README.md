@@ -90,4 +90,4 @@ It's only temporary to the Powershell process you're using though. [For more inf
 - Use ```ROS_DOMAIN_ID``` environment variable to 'gorup up' nodes in order to differentiate which nodes are meant to do something than other nodes doing something else.
     - The default domain value for all nodes in ROS 2 is ```0```, however you could change that by firstly declaring what domain value ```ROS_DOMAIN_ID``` should be by typing:
     <pre> set ROS_DOMAIN_ID = <i>value</i>
-        - [Although I do suggest that you should limit your value from ```0-101```](https://docs.ros.org/en/humble/Concepts/Intermediate/About-Domain-ID.html#platform-specific-constraints)
+        - [Although I do suggest that you should limit your value from ```0-101```](https://docs.ros.org/en/humble/Concepts/Intermediate/About-Domain-ID.html#platform-specific-constraintsI30@">DfhfN!s5)
