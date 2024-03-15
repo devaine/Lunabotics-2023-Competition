@@ -26,17 +26,20 @@ If you want to use <code>./ros2Setup.bat</code>, make sure you're executing that
 * Also, <code>./ros2Setup.bat</code> is set for a specific path on my device, make sure it fits for your own path to the ros2 <code>local_setup.bat</code>.
 * If you wish to use the powershell script, I suggest looking at [this](https:\go.microsoft.com\fwlink\?LinkID=135170) if you care about your computer's permissions.
 
-## Packages
-<code>src/</code> => Where your ROS 2 Source code is.
+## Defining Directories and Setting Up Build Environment
+```src/``` => Where your ROS 2 Source code is.
     - ```colcon``` (when executed) will create directories => <code>build/</code>,<code>install/</code>, and <code>log/</code>.
-- To build ROS2 code, use the VS2019 envionment by searching up in your Start Menu...
+* To build ROS2 code, use the VS2019 envionment by searching up in your Start Menu...
+
 <pre>x64 Native Tools Command Prompt for VS 2019</pre>
-    1. Make sure you have environment variables set for an Administrator (CMake, Python, and Python Scripts)
-    2. And execute your ROS2 setup executable beforehand in order to build
-        - [use this for setuptools if there's an error for "setup.py"](https://answers.ros.org/question/396439/setuptoolsdeprecationwarning-setuppy-install-is-deprecated-use-build-and-pip-and-other-standards-based-tools/)
-        - [and this too](https://www.reddit.com/r/ROS/comments/wxkfes/colcon_build_failed_in_example_failed_examples/)
+
+1. Make sure you have environment variables set for an Administrator (CMake, Python, and Python Scripts)
+2. And execute your ROS2 setup executable beforehand in order to build
+    - [use this for setuptools if there's an error for "setup.py"](https://answers.ros.org/question/396439/setuptoolsdeprecationwarning-setuppy-install-is-deprecated-use-build-and-pip-and-other-standards-based-tools/)
+    - [and this too if you're still stuck](https://www.reddit.com/r/ROS/comments/wxkfes/colcon_build_failed_in_example_failed_examples/)
     - From what's shown, it seems that <code>package.xml</code> is meant to be within a package directory under <code>src/</code>
     - **REQUIRED**: When starting a new terminal instance or when you're building/executing code, make sure your ROS2 is *sourced* before doing executing any ```colcon``` or ```ros2``` commands
+
 ### What is a package?
 - A package is a organizational unit for ROS 2 code. It helps with installing and sharing code.
 - Uses <code>ament</code> as it's build system and <code>colcon</code> as it's build tool.
