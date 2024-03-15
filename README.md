@@ -1,13 +1,13 @@
 # Development Branch for Lunabotics on Windows
 ## NOTICE: This is under the assumption that you installed the [Windows Version of ROS 2 (Humble)](https://docs.ros.org/en/humble/Installation/Windows-Install-Binary.html)
 
-# Table of Cotents
-1. [Tutorials and Refences](#tutorials--references)
-2. [Packages Used](#external-packages-used)
-3. [Notes](#notes)
-4. [Notice for ```./ros2Setup.bat```](#notice-for-ros2setupbat)
-5. [Defining Directories & Setting Up Build Environment](#defining-directories-and-setting-up-build-environment)
-6. [Packages](#packages)
+# Table of Contents
+### 1. [Tutorials and Refences](#tutorials--references)
+### 2. [Packages Used](#external-packages-used)
+### 3. [Notes](#notes)
+* [Notice for ```./ros2Setup.bat```](#notice-for-ros2setupbat)
+* [Defining Directories & Setting Up Build Environment](#defining-directories-and-setting-up-build-environment)
+### 6. [Packages](#packages)
 
 ## Basic Diagram for interactions between hardware components
 ![Diagram](./images/Diagram.png)
@@ -25,7 +25,6 @@
 
 
 ## External Packages Used
-- 
 
 ---
 # Notes:
@@ -64,7 +63,7 @@ If you want to use <code>./ros2Setup.bat</code>, make sure you're executing that
 - Workspaces can contain multiple packages (each in their own folder)
     - They can also can contain packages of any type within.
 - You cannot have nested packages in a workspace.
-- The best practice is to have have <code>./src></code> folder <i>within</i> your workspace and put your packages in there.
+- The best practice is to have have <code>./src</code> folder <i>within</i> your workspace and put your packages in there.
 
 - <b>Remember!</b> if you want to build multiple packages at once, you can use <code>colcon build</code> in the workspace root directory. (not <code>./src</code> but rather the directory above it.)
     - You can also use <code>colcon build</code> for building invdividual packages, just makes sure you're in the package's directory.
