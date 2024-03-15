@@ -1,13 +1,16 @@
 # Development Branch for Lunabotics on Windows
 ## NOTICE: This is under the assumption that you installed the [Windows Version of ROS 2 (Humble)](https://docs.ros.org/en/humble/Installation/Windows-Install-Binary.html)
 
-# Table of Contents
-### 1. [Tutorials and Refences](#tutorials--references)
-### 2. [Packages Used](#external-packages-used)
-### 3. [Notes](#notes)
+## Table of Contents
+1. [Tutorials and Refences](#tutorials--references)
+2. [Packages Used](#external-packages-used)
+3. [Notes](#notes)
 * [Notice for ```./ros2Setup.bat```](#notice-for-ros2setupbat)
 * [Defining Directories & Setting Up Build Environment](#defining-directories-and-setting-up-build-environment)
-### 6. [Packages](#packages)
+6. [Packages](#packages)
+* [What's a package?](#what-is-a-package)
+* [The contents of a package](#contents-of-a-package)
+7. [Workspaces](#workspaces)
 
 ## Basic Diagram for interactions between hardware components
 ![Diagram](./images/Diagram.png)
