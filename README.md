@@ -16,7 +16,7 @@
 
 
 ## Packages Used (or Using)
-- [RPLidar](https://wiki.ros.org/rplidar)
+- [RPLidar](https://wiki.ros.org/rplidar) - **NOT YET**
     - [Wiki](https://github.com/robopeak/rplidar_ros/wiki)
 
 ---
@@ -66,7 +66,7 @@ If you want to use <code>./ros2Setup.bat</code>, make sure you're executing that
 1. Create your workspace (create a new folder)
 2. Source your ROS 2 install setup <code>./ros2Setup.bat</code>
 3. Create your package 
-    - You may use the command (creates a package + nodes inside the package)
+    - You may use the command (creates a package + a empty node inside the package)
     <pre>ros2 pkg create --build-type ament_cmake --license Apache-2.0 --node-name my_node my_package</pre>
 
     **OR**
@@ -89,5 +89,5 @@ If you want to use <code>./ros2Setup.bat</code>, make sure you're executing that
 ### More info about nodes
 - Use ```ROS_DOMAIN_ID``` environment variable to 'gorup up' nodes in order to differentiate which nodes are meant to do something than other nodes doing something else.
     - The default domain value for all nodes in ROS 2 is ```0```, however you could change that by firstly declaring what domain value ```ROS_DOMAIN_ID``` should be by typing:
-    <pre> set ROS_DOMAIN_ID = <i>value</i></pre>
+    *<pre> set ROS_DOMAIN_ID = <i>value</i></pre>
         - [Although I do suggest that you should limit your value from ```0-101```](https://docs.ros.org/en/humble/Concepts/Intermediate/About-Domain-ID.html#platform-specific-constraintsI30@">DfhfN!s5)
