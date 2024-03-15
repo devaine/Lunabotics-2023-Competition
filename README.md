@@ -18,7 +18,7 @@
 ## Tutorials & References
 - [ROS2 Humble Windows Binary Install](https://docs.ros.org/en/humble/Installation/Windows-Install-Binary.html)
 - [Wiki for ROS2 Tutorials on Humble](https://docs.ros.org/en/humble/Tutorials.html)
-- [What are nodes?](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Nodes/Understanding-ROS2-Nodes.html)
+- [Nodes](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Nodes/Understanding-ROS2-Nodes.html)
 - [Building Packages with Colcon](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Colcon-Tutorial.html)
 - [Create your own package](https://www.ros.org/reps/rep-0140.html)
 - [Creating Packages](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Colcon-Tutorial.html)
@@ -94,9 +94,18 @@ If you want to use <code>./ros2Setup.bat</code>, make sure you're executing that
 5. You can run the program by specifying the node and the package by using:
 <pre>ros2 run <i>my_package</i> <i>my_node</i> </pre>
 
+### The ROS Graph
+- The ROS (2) Graph demonstrates all elements of ROS 2 in action by processing data amongst each other at the same time. As the wiki states: "[The ROS 2 Graph] emcompasses all executables and connections between them if you were to map them all out"
+
 ### Nodes
-- Are executables that communicate over ROS graph, they pass information (in the form of string messages over a **topic**)
- 
+- Nodes are executables that communicate over an ROS graph, they pass information (in the form of string messages over a **topic**)
+
+#### The functionality of Nodes
+- Each node should be responsible of doing one singular operation (or have a single modular purpose) of a bigger system. (E.g Sending signals from a controller)
+- Each node sends and recieves data from other nodes via *topics*, *services*, *actions*, or *parameters*.
+- Here's an example for a better understanding (*Credits to the ROS 2 Wiki*)
+![Nodes Example](./images/Nodes-TopicandService.gif)
+
 ### Nodes and Domain ID's
 - Use ```ROS_DOMAIN_ID``` environment variable to 'gorup up' nodes in order to differentiate which nodes are meant to do something than other nodes doing something else.
     - The default domain value for all nodes in ROS 2 is ```0```, however you could change that by firstly declaring what domain value ```ROS_DOMAIN_ID``` should be by typing:
